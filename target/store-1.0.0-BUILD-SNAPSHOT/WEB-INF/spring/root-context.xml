@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<bean id="userValidator" class="com.neu.store.validator.UserValidator"></bean>
+	<bean id="customerDao" class="com.neu.store.dao.CustomerDAO" ></bean>
+	
+	<bean id="categoryValidator" class="com.neu.store.validator.CategoryValidator"></bean>
+	<bean id="categoryDao" class="com.neu.store.dao.CategoryDAO" ></bean>
+	
+	<bean id="advertValidator" class="com.neu.store.validator.AdvertValidator"></bean>
+	<bean id="advertDao" class="com.neu.store.dao.AdvertDAO" ></bean>
+	
+	<bean id="bookDao" class="com.neu.store.dao.BookDAO" ></bean>
+	
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- one of the properties available; the maximum file size in bytes -->
+		<property name="maxUploadSize" value="5000000" />
+	</bean>
+		
+</beans>
